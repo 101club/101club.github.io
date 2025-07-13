@@ -1,19 +1,20 @@
+
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>101Club 性感资源导航</title>
+  <title>101Club 资源站</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background-color: #0f0f0f;
-      color: #fff;
       margin: 0;
-      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #121212;
+      color: #ffffff;
+      line-height: 1.6;
     }
     header {
-      background-color: #1e1e1e;
+      background: #1f1f1f;
       padding: 20px;
       text-align: center;
     }
@@ -23,90 +24,165 @@
     }
     nav {
       text-align: center;
-      margin: 20px 0;
+      margin-top: 10px;
     }
     nav a {
-      color: #f9c74f;
-      margin: 0 15px;
+      margin: 0 10px;
+      color: #90caf9;
       text-decoration: none;
-      font-weight: bold;
     }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 20px;
+    section {
+      max-width: 960px;
+      margin: 20px auto;
+      padding: 0 20px;
     }
     .card {
-      background-color: #1e1e1e;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 0 8px rgba(255, 255, 255, 0.05);
-    }
-    .card img {
-      width: 100%;
-      display: block;
-    }
-    .card p {
-      padding: 10px;
-      font-size: 0.9em;
-      color: #ccc;
+      background: #2a2a2a;
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 10px;
     }
     footer {
       text-align: center;
-      padding: 20px;
-      color: #666;
       font-size: 0.8em;
+      color: #888;
+      margin: 30px 0;
+    }
+    .lang-select {
+      margin-top: 10px;
     }
   </style>
+  <script>
+    const translations = {
+      'zh-Hant': {
+        welcome: "歡迎來到 101Club 资源站",
+        desc: "這裡收錄了合法性感圖片資源與免費 AI 工具，支援多語言切換與夜間模式。",
+        tools: "AI 工具推薦",
+        gallery: "性感圖庫導航",
+        join: "加入社群 / 捐贈",
+        guides: "圖文教學"
+      },
+      en: {
+        welcome: "Welcome to 101Club Resource Hub",
+        desc: "Legally curated sexy galleries & free AI tools with multilingual support and dark mode.",
+        tools: "AI Tools",
+        gallery: "Gallery Navigation",
+        join: "Join Community / Donate",
+        guides: "Guides & Tutorials"
+      },
+      ja: {
+        welcome: "101Club リソースハブへようこそ",
+        desc: "合法的なセクシー画像と無料AIツール、多言語対応、ダークモードあり。",
+        tools: "AIツール",
+        gallery: "ギャラリーナビ",
+        join: "コミュニティ参加 / 寄付",
+        guides: "ガイドとチュートリアル"
+      },
+      es: {
+        welcome: "Bienvenido a 101Club Centro de Recursos",
+        desc: "Galerías sensuales legales y herramientas de IA gratuitas con soporte multilingüe y modo oscuro.",
+        tools: "Herramientas de IA",
+        gallery: "Navegación de Galería",
+        join: "Unirse / Donar",
+        guides: "Guías y Tutoriales"
+      },
+      ar: {
+        welcome: "مرحبًا بكم في مركز موارد 101Club",
+        desc: "معارض جذابة شرعية وأدوات ذكاء اصطناعي مجانية، بدعم متعدد اللغات ووضع مظلم.",
+        tools: "أدوات الذكاء الاصطناعي",
+        gallery: "تصفح المعرض",
+        join: "انضم / تبرع",
+        guides: "أدلة ودروس"
+      }
+    };
+
+    function setLang(lang) {
+      document.getElementById('welcome').textContent = translations[lang].welcome;
+      document.getElementById('desc').textContent = translations[lang].desc;
+      document.getElementById('tools').textContent = translations[lang].tools;
+      document.getElementById('gallery').textContent = translations[lang].gallery;
+      document.getElementById('join').textContent = translations[lang].join;
+      document.getElementById('guides').textContent = translations[lang].guides;
+    }
+  </script>
 </head>
 <body>
   <header>
-    <h1>101Club 性感资源导航</h1>
-    <p>合法性感图片 · 免费教程 · 私密分享</p>
+    <h1 id="welcome">歡迎來到 101Club 资源站</h1>
+    <div class="lang-select">
+      <select onchange="setLang(this.value)">
+        <option value="zh-Hant">繁體中文</option>
+        <option value="en">English</option>
+        <option value="ja">日本語</option>
+        <option value="es">Español</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+    <p id="desc">這裡收錄了合法性感圖片資源與免費 AI 工具，支援多語言切換與夜間模式。</p>
+    <nav>
+      <a href="#tools" id="tools">AI 工具推薦</a>
+      <a href="#gallery" id="gallery">性感圖庫導航</a>
+      <a href="#guides" id="guides">圖文教學</a>
+      <a href="#join" id="join">加入社群 / 捐贈</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#images">图片专区</a>
-    <a href="#guides">新手教程</a>
-    <a href="#join">加入我们</a>
-  </nav>
-
-  <div class="container">
-    <h2 id="images">🔥 精选性感合法图片</h2>
-    <div class="grid">
-      <div class="card">
-        <a href="https://i.imgur.com/xxxxxx.jpg" target="_blank">
-          <img src="https://i.imgur.com/xxxxxx.jpg" alt="性感模特图1" />
-        </a>
-        <p>模特A，来自合法图库 Pexels</p>
-      </div>
-      <div class="card">
-        <a href="https://i.imgur.com/yyyyyy.jpg" target="_blank">
-          <img src="https://i.imgur.com/yyyyyy.jpg" alt="性感模特图2" />
-        </a>
-        <p>模特B，自然光写真</p>
-      </div>
+  <section id="tools">
+    <h2>AI 工具推薦</h2>
+    <div class="card">
+      <strong>Leonardo.Ai</strong> – 圖像生成工具：<br>
+      🔗 <a href="https://leonardo.ai" target="_blank">https://leonardo.ai</a>
     </div>
+    <div class="card">
+      <strong>PixAI</strong> – 二次元 AI 畫師：<br>
+      🔗 <a href="https://pixai.art" target="_blank">https://pixai.art</a>
+    </div>
+    <div class="card">
+      <strong>Runway</strong> – AI 影片生成平台：<br>
+      🔗 <a href="https://runwayml.com" target="_blank">https://runwayml.com</a>
+    </div>
+  </section>
 
-    <h2 id="guides">📘 新手教程</h2>
-    <ul>
-      <li><a href="#">如何匿名安全上传资源</a></li>
-      <li><a href="#">GitHub Pages建站教程</a></li>
-      <li><a href="#">图片托管平台推荐</a></li>
-    </ul>
+  <section id="gallery">
+    <h2>性感圖庫導航</h2>
+    <div class="card">
+      <strong>Pexels 性感合輯</strong><br>
+      🔗 <a href="https://www.pexels.com/search/sexy/" target="_blank">pexels.com/search/sexy</a>
+    </div>
+    <div class="card">
+      <strong>Pixabay 性感攝影</strong><br>
+      🔗 <a href="https://pixabay.com/images/search/sexy/" target="_blank">pixabay.com/search/sexy</a>
+    </div>
+    <div class="card">
+      <strong>AI 性感圖合輯（合法）</strong><br>
+      🛠️ 可自行收集與整理，日後打包下載
+    </div>
+  </section>
 
-    <h2 id="join">💬 加入我们</h2>
-    <p>欢迎加入 <strong>Telegram 群组</strong> 获取每日更新和私密福利。</p>
-    <p><a href="https://t.me/yourgroup" target="_blank">点击加入 @101ClubTG</a></p>
-  </div>
+  <section id="guides">
+    <h2>圖文教學</h2>
+    <div class="card">
+      <strong>如何使用 Leonardo.Ai</strong>（圖文版）<br>
+      🔗 敬請期待
+    </div>
+    <div class="card">
+      <strong>免費圖庫搬運技巧</strong><br>
+      🔗 敬請期待
+    </div>
+  </section>
+
+  <section id="join">
+    <h2>加入社群 / 捐贈支持</h2>
+    <div class="card">
+      📢 Telegram 群組：<br>
+      🔗 <a href="https://t.me/yourchannel" target="_blank">點此加入</a><br><br>
+      ☕ BuyMeACoffee 支持：<br>
+      🔗 <a href="https://buymeacoffee.com/yourid" target="_blank">buymeacoffee.com/yourid</a>
+    </div>
+  </section>
 
   <footer>
-    <p>本站资源来自公共平台，遵守版权与社区规定。101Club 版权所有。</p>
+    本站由 101Club 製作 · Powered by GitHub Pages · 開放原始碼自由分享
   </footer>
 </body>
 </html>
